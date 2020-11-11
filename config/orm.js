@@ -72,7 +72,7 @@ const orm = {
   },
   // An example of objColVals would be {name: panther, sleepy: true}
   update: function(table, objColVals, condition, cb) {
-    const queryString = "UPDATE " + table;
+     var queryString = "UPDATE " + table;
 
     queryString += " SET ";
     queryString += objToSql(objColVals);
@@ -89,7 +89,7 @@ const orm = {
     });
   },
   delete: function(table, condition, cb) {
-    const queryString = "DELETE FROM " + table;
+    var queryString = "DELETE FROM " + table;
     queryString += " WHERE ";
     queryString += condition;
 
