@@ -1,9 +1,27 @@
 <h1>Burgers!</h1>
 <div class="container">
   <div class="row">
+    
     <div class="card">
       <div class="col-sm-12">
         <h2>Burgers that are not devoured!</h2>
+
+        <ul>
+          {{#each burgers}}
+          {{#if devour}}
+          {{> cats/burger-block devour=false}}
+          {{/if}}
+          {{/each}}
+        </ul>
+
+      </div>
+    </div>
+    
+    
+    
+    <div class="card">
+      <div class="col-sm-12">
+        <h2>Burgers that are devoured!</h2>
 
         <ul>
           {{#each burgers}}
@@ -14,21 +32,9 @@
         </ul>
       </div>
     </div>
-    <div class="card">
-      <div class="col-sm-12">
 
-        <h2>Burgers that are devoured!</h2>
 
-        <ul>
-          {{#each burgers}}
-          {{#if devour}}
-          {{> cats/burger-block devour=false}}
-          {{/if}}
-          {{/each}}
-        </ul>
-      </div>
-      
-    </div>
+    
   </div>
 </div>
 
@@ -43,7 +49,7 @@
   <div class="form-group">
     <label for="devour">Hungry?</label><br>
     <input type="radio" name="devour" value="1" checked> Devour!<br>
-    <input type="radio" name="devour" value="0"> Uneaten
+    {{!-- <input type="radio" name="devour" value="0"> Uneaten --}}
   </div>
 
   <button type="submit">Add Burger</button>
